@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Output } from "@angular/core";
+import { EventEmitter } from "@angular/core";
 
 @Component({
   selector: 'app-nova-transferencia',//seletor precisa começar com app-
@@ -8,11 +9,21 @@ import { Component } from "@angular/core";
 })
 export class NovaTransferenciaComponent {
   // criaando metodo para printar na tela quando submetemos novo valor na transferência
-  valor:number = 12; //varipável do tipo number.
-  destino: number = 222;
+  valor:number; //varipável do tipo number.
+  destino: number;
+
+  @Output() aoTransferir = new EventEmitter<any>();
+
+
   transferir() {
     console.log('Solicitada nova transferência')
-    console.log('Valor: ', this.valor);
-    console.log('Destino: ', this.destino);
+    const valorEmitir = {valor: this.valor, destino: this.destino};
+    this.aoTransferir.emit(valorEmitir);//esse valo vai pra variável $event que tá no .html
+    this.limparCampos();
+  }
+
+  limparCampos(){
+    this.valor = 0;
+    this.destino =0;
   }
 }

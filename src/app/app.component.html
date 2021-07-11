@@ -1,1 +1,8 @@
-<app-nova-transferencia></app-nova-transferencia>
+<!-- Componente que faz nova tranferência -->
+<app-nova-transferencia (aoTransferir) = "transferir($event)" ></app-nova-transferencia>
+<!-- daqui o $event é progapado para o component.ts-->
+
+<!-- Interpolando valores {{}} --->
+<p>Valor: {{transferencia?.valor}} </p> <!-- interrogação pra inicializar,
+ ou iniciamos transferência no .ts recebendo {}}, sem inicializar pode quebrar a aplicação  -->
+<p>Destino: {{transferencia?.destino}} </p>
