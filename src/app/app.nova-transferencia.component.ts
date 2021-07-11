@@ -12,6 +12,7 @@ export class NovaTransferenciaComponent {
   valor:number; //varipável do tipo number.
   destino: number;
 
+  //emissor de evento
   @Output() aoTransferir = new EventEmitter<any>();
 
 
