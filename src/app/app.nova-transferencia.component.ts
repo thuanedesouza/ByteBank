@@ -8,8 +8,11 @@ import { Component } from "@angular/core";
 })
 export class NovaTransferenciaComponent {
   // criaando metodo para printar na tela quando submetemos novo valor na transferência
-
+  valor:number = 12; //varipável do tipo number.
+  destino: number = 222;
   transferir() {
     console.log('Solicitada nova transferência')
+    console.log('Valor: ', this.valor);
+    console.log('Destino: ', this.destino);
   }
 }

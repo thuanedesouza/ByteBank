@@ -1,12 +1,18 @@
 <section class = "container">
 <form class = "formulario"  (ngSubmit) = "transferir()">
+  <!-- ngSubmit é o evento que chama a função, possível porque importamos a FormsModule no app.module.ts -->
   <h2>Nova Transferência</h2>
   <div class="form-field">
     <label class = "form-field__label" for="valor">Valor</label>
-    <input class = "form-field-input" id="valor" type="text"></div>
+
+    <input class = "form-field-input" id="valor" type="text" [(ngModel)]="valor" name= "valor" ></div>
+    <!-- Property binding com [(ngSubmit)]="valor", obs: precisamos nomear o input -->
+    <!--  [(ngModel)] - o que alteramos no template ou no componenente é refletido nos 2 sentidos
+     [ngModel] só é refletido do componente para o template,
+     se mudar no template isso não é refletido no componente -->
     <div  class="form-field">
       <label class = "form-field__label" for="destino">Destino</label>
-      <input class = "form-field-input" id="destino" type="text">
+      <input class = "form-field-input" id="destino" type="text"  [(ngModel)]="destino"  name = "destino" >
     </div>
     <div class = "botao-wrapper">
       <button class= "botao" type = "submit">Transferir</button>
