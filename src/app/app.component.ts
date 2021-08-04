@@ -11,11 +11,12 @@ export class AppComponent {
 
   constructor(private service: TransferenciaService){};
 
-  transferir($event){// $event que saiu do component para o html pra cá
+ /* Agora é feito por rota.
+ transferir($event){// $event que saiu do component para o html pra cá
     this.service.adicionar($event);
 
     }
-
+*/
 
 
 
