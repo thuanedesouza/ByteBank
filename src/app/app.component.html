@@ -2,7 +2,16 @@
 <app-nova-transferencia (aoTransferir) = "transferir($event)" ></app-nova-transferencia>
  -->
 
-<!-- Componente que faz nova tranferência -->
+<!-- Componente que fazia com metodo post e get nova tranferência-
 <app-nova-transferencia  ></app-nova-transferencia>
-<!-- daqui o $event é progapado para o component.ts-->
-<app-extrato></app-extrato>
+<-- daqui o $event é progapado para o component.ts
+<app-extrato></app-extrato> -->
+
+<!-- Componente que faz por meio de rotas a nova transferência e mostra extrato -->
+<header>
+<a routerLink="extrato">ByteBank</a>
+<a routerLink="nova-transferencia" routerLinkActive="ativo" >Nova Transferência</a>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

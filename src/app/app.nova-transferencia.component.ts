@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Transferencia } from './models/transferencia.model';
 import { TransferenciaService } from './services/transferencia.service';
 import { Component, Output } from "@angular/core";
@@ -20,7 +21,8 @@ export class NovaTransferenciaComponent {
   destino: number;
 
 
-constructor(private service: TransferenciaService){}
+constructor(private service: TransferenciaService, private router: Router){}
+
 
 
   transferir() {
@@ -33,7 +35,9 @@ constructor(private service: TransferenciaService){}
    this.service.adicionar(valorEmitir).subscribe(resultado =>{
      console.log(resultado);
      this.limparCampos();
-   }, error => console.error(error));
+
+     this.router.navigateByUrl('extrato');
+       }, error => console.error(error));
 
     //this.limparCampos(); foi pra dentro do service pra que em caso de erro ele faça diferente
   }
